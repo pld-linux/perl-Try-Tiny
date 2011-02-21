@@ -8,13 +8,13 @@
 Summary:	Try::Tiny - minimal try/catch with proper localization of $@
 Summary(pl.UTF-8):	Try::Tiny - minimaly try/catch z odpowiednią lokalizacją $@
 Name:		perl-Try-Tiny
-Version:	0.06
+Version:	0.09
 Release:	1
 # same as perl
 License:	GPL v1+ or Artistic
 Group:		Development/Languages/Perl
-Source0:	http://search.cpan.org/CPAN/authors/id/N/NU/NUFFIN/Try-Tiny-%{version}.tar.gz
-# Source0-md5:	d37cf6cec95a500e23939672c22082d0
+Source0:	http://www.cpan.org/modules/by-authors/id/D/DO/DOY/Try-Tiny-%{version}.tar.gz
+# Source0-md5:	e526aa7d80cbc690c4a20925a592c13c
 URL:		http://search.cpan.org/dist/Try-Tiny/
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
@@ -38,13 +38,20 @@ handling for those having a hard time installing TryCatch, but who
 still want to write correct eval blocks without 5 lines of boilerplate
 each time.
 
-It's designed to work as correctly as possible in light of the various
-pathological edge cases (see BACKGROUND) and to be compatible with any
-style of error values (simple strings, references, objects, overloaded
-objects, etc).
+%description -l pl.UTF-8
+Ten moduł udostępnia proste instrukcje try/catch zaprojektowane w
+celu ograniczenia popularnych błędów w blokach eval - i NIC więcej,
+w przeciwieństwie do TryCatch, który udostępnia ładną składnię oraz
+zapobiega dodawaniu kolejnej warstwy stosu wywołań i obsługuje powrót
+z bloku try do procedury wywołującej. Te dodatkowe możliwości są
+okupione kilkoma zależnościami (Devel::Declare i Scope::Upper), które
+bywają problematyczne, a dodatkowe filtrowanie catch wykorzystuje
+ograniczenia typu Moose, które mogą być niepożądane.
 
-# %description -l pl.UTF-8
-# TODO
+Głównym celem tego modułu jest udostępnienie prostej i wiarygodnej
+obsługi błędów dla zmęczonych instalowaniem TryCatch, ale nadal
+chcących pisać proste bloki eval bez każdorazowych 5 nadmiarowych
+linii.
 
 %prep
 %setup -q -n %{pdir}-%{pnam}-%{version}
@@ -69,5 +76,5 @@ rm -rf $RPM_BUILD_ROOT
 %defattr(644,root,root,755)
 %doc Changes
 %dir %{perl_vendorlib}/Try
-%{perl_vendorlib}/Try/*.pm
-%{_mandir}/man3/*
+%{perl_vendorlib}/Try/Tiny.pm
+%{_mandir}/man3/Try::Tiny.3pm*
