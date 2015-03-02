@@ -16,6 +16,7 @@ Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/D/DO/DOY/Try-Tiny-%{version}.tar.gz
 # Source0-md5:	6769658bfbca241a470206c9a8819ff2
 URL:		http://search.cpan.org/dist/Try-Tiny/
+BuildRequires:	perl-ExtUtils-MakeMaker >= 6.30
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildArch:	noarch
