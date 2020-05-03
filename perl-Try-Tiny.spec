@@ -13,10 +13,11 @@ License:	MIT
 Group:		Development/Languages/Perl
 Source0:	http://www.cpan.org/modules/by-authors/id/E/ET/ETHER/Try-Tiny-%{version}.tar.gz
 # Source0-md5:	eb362c3cb32c42f9f28de9ddb7f2ead6
-URL:		http://search.cpan.org/dist/Try-Tiny/
+URL:		https://metacpan.org/release/Try-Tiny
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.30
 BuildRequires:	perl-devel >= 1:5.8.0
 BuildRequires:	rpm-perlprov >= 4.1-13
+BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
