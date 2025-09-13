@@ -7,15 +7,19 @@
 Summary:	Try::Tiny - minimal try/catch with proper localization of $@
 Summary(pl.UTF-8):	Try::Tiny - minimaly try/catch z odpowiednią lokalizacją $@
 Name:		perl-Try-Tiny
-Version:	0.31
+Version:	0.32
 Release:	1
 License:	MIT
 Group:		Development/Languages/Perl
-Source0:	http://www.cpan.org/modules/by-authors/id/E/ET/ETHER/Try-Tiny-%{version}.tar.gz
-# Source0-md5:	993a29ee8a03c9bd9c2f7c53d1082a03
-URL:		https://metacpan.org/release/Try-Tiny
+Source0:	https://www.cpan.org/modules/by-authors/id/E/ET/ETHER/Try-Tiny-%{version}.tar.gz
+# Source0-md5:	964424fcada4654bede745a7a2fb870b
+URL:		https://metacpan.org/dist/Try-Tiny
+BuildRequires:	perl(Exporter) >= 5.57
 BuildRequires:	perl-ExtUtils-MakeMaker >= 6.30
 BuildRequires:	perl-devel >= 1:5.8.0
+%if %{with tests}
+BuildRequires:	perl-Test-Simple
+%endif
 BuildRequires:	rpm-perlprov >= 4.1-13
 BuildRequires:	rpmbuild(macros) >= 1.745
 BuildArch:	noarch
